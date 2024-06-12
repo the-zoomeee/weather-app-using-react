@@ -10,7 +10,7 @@ This is a simple weather application built with React that fetches and displays 
 
 ## Demo
 
-![Weather App Screenshot](screenshot.png)
+![weatherApp](https://github.com/the-zoomeee/weather-app-using-react/assets/154297263/56c0a778-f849-4747-9da6-247491171d3d)
 
 ## Getting Started
 
