@@ -7,21 +7,18 @@
 body {
   background-color: hsl(204, 86%, 23%);
   font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
   height: 100vh;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  /*overflow: hidden;  Disable scrolling */
-  margin-top: 15px;
-  margin-bottom: 15px;
-  margin-left: 15px;
-  margin-right: 15px;
 }
 
 .weather-app {
   background-color: white;
-  max-width: 600px;
+  min-width: 340px;
+  width: 100%;
   padding: 30px;
   border-radius: 15px;
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -48,7 +45,7 @@ input[type="text"] {
   border-radius: 15px;
   cursor: pointer;
   color: white;
-  margin-left: 10px;
+  margin-left: 20px;
   transition: background-color 0.3s ease;
 }
 
@@ -57,7 +54,7 @@ input[type="text"] {
 }
 
 .city-date-section {
-  margin-top: 20px;
+  margin-top: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -72,12 +69,12 @@ input[type="text"] {
 
 .city-date-section .date {
   background-color: #c3eaf4;
-  padding: 5px 10px;
+  padding: 10px 20px;
   border-radius: 15px;
 }
 
 .temperature-info {
-  margin-top: 5px;
+  margin-top: 10x;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -105,7 +102,7 @@ input[type="text"] {
 }
 
 .additional-info {
-  margin-top: 10px;
+  margin-top: 20px;
   display: flex;
   justify-content: space-around;
 }
@@ -114,16 +111,19 @@ input[type="text"] {
 .humidity-info,
 .visibility-info {
   background-color: #ecf0f1;
-  width: 150px;
+  width: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  
   gap: 15px;
   border-radius: 15px;
-  padding: 15px 15px;
+  padding: 30px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  margin: 0px 10px;
+  margin: 0 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .additional-info .material-icons {
@@ -173,7 +173,51 @@ input[type="text"] {
   .additional-info .material-icons {
     font-size: 2rem;
   }
+
 }
+
+@media only screen and (max-width: 360px) {
+  .weather-app {
+    padding: 15px;
+    margin: 10px auto;
+  }
+
+  input[type="text"] {
+    padding: 10px;
+    font-size: 0.8rem;
+    height: 2.5rem;
+  }
+
+  .search-btn {
+    padding: 8px;
+    font-size: 0.8rem;
+  }
+
+  .city-date-section .city {
+    font-size: 1.2rem;
+  }
+
+  .temperature-info .temp {
+    font-size: 5rem;
+  }
+
+  .temperature-info .description i {
+    font-size: 1rem;
+  }
+
+  .temperature-info .description span {
+    font-size: 1rem;
+  }
+
+  .additional-info .material-icons {
+    font-size: 1.8rem;
+  }
+  .additional-info {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 
 @media only screen and (max-width: 480px) {
   .weather-app {
@@ -216,7 +260,7 @@ input[type="text"] {
   .humidity-info,
   .visibility-info {
     width: 120px;
-    padding: 20px;
+    padding: 10px;
   }
 }
 
@@ -235,13 +279,13 @@ input[type="text"] {
   border-color: #42a5f5;
 }
 
-.dark-mode .wind-info{
+.dark-mode .wind-info {
   background-color: #2a2a2a;
 }
 
 .dark-mode .humidity-info {
   background-color: #2a2a2a;
-} 
+}
 
 .dark-mode .visibility-info {
   background-color: #2a2a2a;
@@ -262,7 +306,7 @@ input[type="text"] {
   border-color: #3498db;
 }
 
-.mode-toggle{
+.mode-toggle {
   display: flex;
   justify-content: end;
   margin-right: 10px;
