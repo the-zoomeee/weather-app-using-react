@@ -28,7 +28,11 @@ async function fetchCityFromCoordinates(lat, lon) {
 const App = () => {
   const [city, setCity] = useState("");
   const [weatherData, setWeatherData] = useState(null);
-  const [darkMode, setDarkMode] = useState(false); // Track dark mode state
+  const [darkMode, setDarkMode] = useState(() => {
+    // Load dark mode preference from localStorage
+    const savedMode = localStorage.getItem("darkMode");
+    return savedMode ? JSON.parse(savedMode) : false;
+  });
 
   useEffect(() => {
     const getGeolocation = () => {
@@ -71,7 +75,11 @@ const App = () => {
   };
 
   const toggleDarkMode = () => {
-    setDarkMode(!darkMode); // Toggle dark mode state
+    setDarkMode((prevMode) => {
+      const newMode = !prevMode;
+      localStorage.setItem("darkMode", JSON.stringify(newMode)); // Save dark mode preference
+      return newMode;
+    });
   };
 
   const getWeatherIconName = (weatherCondition) => {
