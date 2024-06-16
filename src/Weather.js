@@ -28,6 +28,7 @@ async function fetchCityFromCoordinates(lat, lon) {
 const App = () => {
   const [city, setCity] = useState("");
   const [weatherData, setWeatherData] = useState(null);
+  const [darkMode, setDarkMode] = useState(false); // Track dark mode state
 
   useEffect(() => {
     const getGeolocation = () => {
@@ -69,6 +70,10 @@ const App = () => {
     }
   };
 
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode); // Toggle dark mode state
+  };
+
   const getWeatherIconName = (weatherCondition) => {
     const iconMap = {
       Clear: "wb_sunny",
@@ -88,7 +93,15 @@ const App = () => {
   const currentDate = new Date().toDateString();
 
   return (
-    <div className="weather-app">
+    <div className={`weather-app ${darkMode ? 'dark-mode' : 'light-mode'}`} >
+      <div className="mode-toggle" onClick={toggleDarkMode}>
+        {darkMode ? (
+          <i className="material-icons">wb_sunny</i> // Light mode icon
+        ) : (
+          <i className="material-icons">nights_stay</i> // Dark mode icon
+        )}
+      </div>
+
       <form className="search-form" onSubmit={handleSearch}>
         <input
           className="city-input"
