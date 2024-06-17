@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Weather.css";
+import logo from "./logo.svg";
 
 const apiKey = process.env.REACT_APP_API_KEY;
 
@@ -29,7 +30,6 @@ const App = () => {
   const [city, setCity] = useState("");
   const [weatherData, setWeatherData] = useState(null);
   const [darkMode, setDarkMode] = useState(() => {
-    // Load dark mode preference from localStorage
     const savedMode = localStorage.getItem("darkMode");
     return savedMode ? JSON.parse(savedMode) : false;
   });
@@ -51,7 +51,8 @@ const App = () => {
           },
           (error) => {
             console.error("Error getting geolocation", error);
-          }
+          },
+          { timeout: 10000 }
         );
       } else {
         console.error("Geolocation is not supported by this browser.");
@@ -77,7 +78,7 @@ const App = () => {
   const toggleDarkMode = () => {
     setDarkMode((prevMode) => {
       const newMode = !prevMode;
-      localStorage.setItem("darkMode", JSON.stringify(newMode)); // Save dark mode preference
+      localStorage.setItem("darkMode", JSON.stringify(newMode));
       return newMode;
     });
   };
@@ -101,13 +102,19 @@ const App = () => {
   const currentDate = new Date().toDateString();
 
   return (
-    <div className={`weather-app ${darkMode ? 'dark-mode' : 'light-mode'}`} >
-      <div className="mode-toggle" onClick={toggleDarkMode}>
-        {darkMode ? (
-          <i className="material-icons">wb_sunny</i> // Light mode icon
-        ) : (
-          <i className="material-icons">nights_stay</i> // Dark mode icon
-        )}
+    <div className={`weather-app ${darkMode ? "dark-mode" : "light-mode"}`}>
+      <div className="header">
+        <div className="logo-container">
+          <img src={logo} alt="logo" className="logo" />
+        </div>
+        <div className="center-text">Weather App</div>
+        <div className="mode-toggle" onClick={toggleDarkMode}>
+          {darkMode ? (
+            <i className="material-icons">wb_sunny</i>
+          ) : (
+            <i className="material-icons">nights_stay</i>
+          )}
+        </div>
       </div>
 
       <form className="search-form" onSubmit={handleSearch}>

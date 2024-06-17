@@ -26,184 +26,41 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.search-form {
+/* Header styles */
+.header {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+  justify-content: space-between;
+  width: 100%;
+  padding-bottom: 1.25rem;
 }
 
-input[type="text"] {
-  flex: 1;
-  padding: 1rem;
-  border: 2px solid #3498db;
-  border-radius: 1rem;
-  font-size: 1rem;
-  height: 3rem;
-  min-width: 60%;
-}
-
-.search-btn {
-  background-color: #3498db;
-  border: none;
-  padding: 0.75rem;
-  border-radius: 1rem;
-  cursor: pointer;
-  color: white;
-  transition: background-color 0.3s ease;
-}
-
-.search-btn:hover,
-.search-btn:focus {
-  background-color: #2980b9;
-}
-
-.city-date-section {
-  margin-top: 1.5rem;
+.logo-container {
   display: flex;
   align-items: center;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+}
+
+.center-text {
+  flex-grow: 1;
+  display: flex;
   justify-content: center;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.city-date-section .city {
-  font-size: 2rem;
-  opacity: 0.9;
-}
-
-.city-date-section .date {
-  background-color: #c3eaf4;
-  padding: 0.5rem 1rem;
-  border-radius: 1rem;
-}
-
-.temperature-info {
-  margin-top: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.temperature-info .temp {
-  font-size: 6rem;
-}
-
-.temperature-info .description {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-}
-
-.temperature-info .description i,
-.temperature-info .description span {
-  font-size: 1.25rem;
-  opacity: 0.8;
-}
-
-.additional-info {
-  margin-top: 1.5rem;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  gap: 1rem;
-}
-
-.wind-info,
-.humidity-info,
-.visibility-info {
-  background-color: #ecf0f1;
-  flex: 1;
-  max-width: 30%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 1rem;
-  border-radius: 1rem;
-  padding: 1.5rem;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  text-align: center;
-}
-
-.additional-info .material-icons {
-  font-size: 2rem;
-  opacity: 0.8;
-}
-
-/* Dark mode styles */
-.dark-mode {
-  background-color: #1e1e1e;
-  color: #ffffff;
-}
-
-.dark-mode .city-date-section .date,
-.dark-mode .wind-info,
-.dark-mode .humidity-info,
-.dark-mode .visibility-info {
-  background-color: #2a2a2a;
-}
-
-.dark-mode .search-form input[type="text"],
-.dark-mode .search-btn {
-  border-color: #42a5f5;
-}
-
-/* Light mode styles */
-.light-mode {
-  background-color: white;
-  color: #333333;
-}
-
-.light-mode .city-date-section .date {
-  background-color: #c3eaf4;
-}
-
-.light-mode .search-form input[type="text"],
-.light-mode .search-btn {
-  border-color: #3498db;
+  font-size: 1.5rem;
 }
 
 .mode-toggle {
+  cursor: pointer;
   display: flex;
-  justify-content: end;
-  margin: 0 1rem 1.25rem;
-}
-
-/* Accessibility Enhancements */
-input[type="text"]:focus,
-.search-btn:focus {
-  outline: 3px solid #42a5f5;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  background-color: hsl(204, 86%, 23%);
-  font-family: Arial, Helvetica, sans-serif;
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
-  padding: 1rem;
 }
 
-.weather-app {
-  background-color: white;
-  min-width: 300px;
-  max-width: 500px;
-  width: 100%;
-  padding: 2rem;
-  border-radius: 1rem;
-  transition: background-color 0.3s ease, color 0.3s ease;
+.mode-toggle .material-icons {
+  font-size: 24px;
+  margin-left: 8px;
 }
 
 .search-form {
@@ -344,12 +201,6 @@ input[type="text"] {
 .light-mode .search-form input[type="text"],
 .light-mode .search-btn {
   border-color: #3498db;
-}
-
-.mode-toggle {
-  display: flex;
-  justify-content: end;
-  margin: 0 1rem 1.25rem;
 }
 
 /* Accessibility Enhancements */
@@ -381,42 +232,6 @@ input[type="text"]:focus,
     width: 100%;
   }
 }
-
-@media (max-width: 480px) {
-  .weather-app {
-    padding: 1rem;
-  }
-
-  input[type="text"] {
-    font-size: 0.9rem;
-    height: 2.5rem;
-  }
-
-  .search-btn {
-    padding: 0.5rem;
-    font-size: 0.9rem;
-  }
-
-  .city-date-section .city {
-    font-size: 1.5rem;
-  }
-
-  .temperature-info .temp {
-    font-size: 3rem;
-  }
-
-  .temperature-info .description i,
-  .temperature-info .description span {
-    font-size: 1rem;
-  }
-
-  .wind-info,
-  .humidity-info,
-  .visibility-info {
-    padding: 1rem;
-  }
-}
-
 
 @media (max-width: 480px) {
   .weather-app {
