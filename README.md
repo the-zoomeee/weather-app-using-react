@@ -7,8 +7,6 @@ Welcome to **Weather App**, your handy tool for checking the weather in any city
 - [Installation](#installation)
 - [Get API Key](#get-api-key)
 - [Usage](#usage)
-- [Components](#components)
-- [Pages](#pages)
 - [Contributing](#contributing)
 - [Demo](#demo)
 - [Website](#website)
@@ -50,41 +48,19 @@ Welcome to **Weather App**, your handy tool for checking the weather in any city
 - Open your browser and navigate to `http://localhost:3000`.
 - Enter the name of any city to get the current weather details.
 
-## Components
-
-### Navbar
-Located in `src/components/Navbar.js`
-- Provides navigation links.
-
-### WeatherCard
-Located in `src/components/WeatherCard.js`
-- Displays the weather information for a city.
-
-### SearchBar
-Located in `src/components/SearchBar.js`
-- Allows users to input a city name and fetch weather details.
-
-## Pages
-
-### Home
-Located in `src/pages/Home.js`
-- The main page for searching and viewing weather details.
-
-### NotFound
-Located in `src/pages/NotFound.js`
-- Displays a 404 message for non-existent routes.
 
 ## Contributing
 Contributions are welcome! Please open an issue or submit a pull request for any enhancements or bug fixes.
 
 ## Demo
 #### Home
-![home](https://github.com/the-zoomeee/weather-app-using-react/assets/154297263/8a313c2a-da08-40b0-991f-249aed41dadb)
+![home - Light mode](https://github.com/the-zoomeee/weather-app-using-react/assets/154297263/b9233d7a-6103-4ccd-b4f5-d61d17b7e8b4)
+![home - Dark mode](https://github.com/the-zoomeee/weather-app-using-react/assets/154297263/795a04bc-53bd-4069-9af9-229087f4364a)
 
 ## Website
 #### Want to see Weather App in action? Check out our live demo here:
 
 >[!Tip]
-> 🚀 **[Experience Weather App Live](https://the-zoomeee.github.io/weather-app-using-react/)** 🚀
+> 🚀 **[Experience Weather App Live](https://the-zoomeee.github.io/Weather-App/)** 🚀
 
 Explore the full functionality of Weather App and stay updated with the latest weather information!
